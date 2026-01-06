@@ -619,7 +619,9 @@
     <script>
         document.getElementById("contactForm").addEventListener("submit", function (e) {
             e.preventDefault();
-
+            const btn = document.getElementById("sendBtn");
+            const btnText = document.getElementById("btnText");
+            const loader = document.getElementById("loader");
             loader.style.display = "inline-block";
             btnText.textContent = "Sending...";
             btn.disabled = true;
