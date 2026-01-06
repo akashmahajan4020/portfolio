@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Details | Akash Mahajan</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
+<section class="project-detail-hero">
+    <div class="container">
+        <h1 id="title"></h1>
+        <p id="subtitle" class="highlight"></p>
+        <p id="description"></p>
+
+        <div id="techTags"></div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <h2 class="section-title">Project Overview</h2>
+        <div id="gallery" class="gallery-grid"></div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Key Features</h2>
+        <ul id="features"></ul>
+    </div>
+</section>
+
+<script src="projects-data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const key = params.get("project");
+const data = projects[key];
+
+if (!data) {
+    document.body.innerHTML = "<h2 style='text-align:center'>Project Not Found</h2>";
+}
+
+document.getElementById("title").innerText = data.title;
+document.getElementById("subtitle").innerText = data.subtitle;
+document.getElementById("description").innerText = data.description;
+
+// Tech tags
+document.getElementById("techTags").innerHTML =
+    data.tech.map(t => `<span class="tech-tag">${t}</span>`).join("");
+
+// Gallery
+document.getElementById("gallery").innerHTML =
+    data.galleryIcons.map(i => `<div class="gallery-item"><i class="fas ${i}"></i></div>`).join("");
+
+// Features
+document.getElementById("features").innerHTML =
+    data.features.map(f => `<li>✔ ${f}</li>`).join("");
+</script>
+
+</body>
+</html>
