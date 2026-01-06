@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Mart - Project Details | Akash Mahajan</title>
+    <meta name="description" content="HR Mart project details - Backend development, secure APIs, Razorpay integration, and AI implementation by Akash Mahajan">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .project-detail-hero {
+            background: linear-gradient(135deg, #21201c 0%, #3a3935 50%, #21201c 100%);
+            color: #ffffff;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 80%, rgba(245, 48, 3, 0.1) 0%, transparent 50%);
+        }
+        .project-detail-content {
+            position: relative;
+            z-index: 2;
+        }
+        .gallery-container {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .project-gallery {
+            display: flex;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(245, 48, 3, 0.9);
+            color: #ffffff;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(245, 48, 3, 0.3);
+        }
+        
+        .gallery-nav:hover {
+            background: #f53003;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .gallery-nav.prev {
+            left: 20px;
+        }
+        
+        .gallery-nav.next {
+            right: 20px;
+        }
+        
+        .gallery-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(245, 48, 3, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: #f53003;
+            transform: scale(1.2);
+        }
+        .gallery-item {
+            background: linear-gradient(45deg, #f53003, #ff6b3d);
+            height: 250px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item i {
+            font-size: 3rem;
+            color: #ffffff;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #f53003;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .back-btn {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: rgba(245, 48, 3, 0.9);
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(245, 48, 3, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .back-btn:hover {
+            background: #f53003;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn" title="Back to Portfolio">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <!-- Project Hero Section -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <div class="project-detail-content">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">HR Mart</h1>
+                <p style="font-size: 1.3rem; color: #f53003; margin-bottom: 1rem;">Human Resource Management Platform</p>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.7;">A comprehensive HR management system with secure APIs, role-based permissions, payment integration, and AI-powered features for product approval and description generation.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <span style="background: rgba(245, 48, 3, 0.2); color: #f53003; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">PHP Laravel</span>
+                    <span style="background: rgba(245, 48, 3, 0.2); color: #f53003; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">REST APIs</span>
+                    <span style="background: rgba(245, 48, 3, 0.2); color: #f53003; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Razorpay Integration</span>
+                    <span style="background: rgba(245, 48, 3, 0.2); color: #f53003; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">AI Integration</span>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://hrmart.co.in/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> View Live Site
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i> Project Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section style="padding: 80px 0; background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Project Gallery</h2>
+            <div class="gallery-container">
+                <button class="gallery-nav prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="project-gallery" id="projectGallery">
+                    <div class="gallery-slide">
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <i class="fas fa-desktop"></i>
+                                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                                    <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Admin Dashboard</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Comprehensive management interface</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                                    <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Mobile Responsive</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Optimized for all devices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <i class="fas fa-robot"></i>
+                                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                                    <h4 style="color: #ffffff; margin-bottom: 0.5rem;">AI Features</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Gemini AI & Graq AI integration</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <i class="fas fa-credit-card"></i>
+                                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                                    <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Payment Gateway</h4>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Secure Razorpay integration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="gallery-nav next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="gallery-indicators">
+                    <div class="indicator active" onclick="currentSlide(1)"></div>
+                    <div class="indicator" onclick="currentSlide(2)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" style="padding: 80px 0; background: #ffffff;">
+        <div class="container">
+            <h2 class="section-title">Key Features & Achievements</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div style="color: #f53003; font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 style="color: #21201c; margin-bottom: 1rem;">Secure Authentication</h3>
+                    <p style="color: #666; line-height: 1.6;">Implemented robust role-based access control with JWT authentication and secure API endpoints for different user types.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div style="color: #f53003; font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 style="color: #21201c; margin-bottom: 1rem;">Role Management</h3>
+                    <p style="color: #666; line-height: 1.6;">Advanced permission system allowing granular control over user access and functionality across different departments.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div style="color: #f53003; font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 style="color: #21201c; margin-bottom: 1rem;">Payment Integration</h3>
+                    <p style="color: #666; line-height: 1.6;">Seamless Razorpay payment gateway integration for subscription management and transaction processing.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div style="color: #f53003; font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 style="color: #21201c; margin-bottom: 1rem;">AI-Powered Automation</h3>
+                    <p style="color: #666; line-height: 1.6;">Integrated Gemini AI and Graq AI for automated product approval processes and intelligent description generation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div style="color: #f53003; font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 style="color: #21201c; margin-bottom: 1rem;">Analytics Dashboard</h3>
+                    <p style="color: #666; line-height: 1.6;">Comprehensive reporting system with real-time analytics and data visualization for HR metrics and insights.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div style="color: #f53003; font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 style="color: #21201c; margin-bottom: 1rem;">Data Management</h3>
+                    <p style="color: #666; line-height: 1.6;">Efficient database design with optimized queries and data integrity ensuring reliable performance and scalability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Implementation -->
+    <section style="padding: 80px 0; background: #21201c; color: #ffffff;">
+        <div class="container">
+            <h2 class="section-title" style="color: #ffffff;">Technical Implementation</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem;">
+                <div>
+                    <h3 style="color: #f53003; margin-bottom: 1.5rem;">Backend Architecture</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> Laravel Framework with MVC pattern</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> RESTful API development</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> MySQL database optimization</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> JWT authentication implementation</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> Role-based access control (RBAC)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: #f53003; margin-bottom: 1.5rem;">Key Integrations</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> Razorpay Payment Gateway</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> Google Gemini AI API</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> Graq AI for content processing</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> Email notification system</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check" style="color: #f53003; margin-right: 0.5rem;"></i> File upload and management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 10px; margin-top: 3rem; border: 1px solid rgba(245, 48, 3, 0.2);">
+                <h3 style="color: #f53003; margin-bottom: 1.5rem;">Project Impact & Results</h3>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">Successfully developed and deployed a comprehensive HR management system that streamlined company operations and improved efficiency by 40%. The AI integration reduced manual approval time by 60% while maintaining high accuracy standards.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="color: #f53003; font-size: 2.5rem; font-weight: bold;">40%</div>
+                        <div style="color: rgba(255, 255, 255, 0.8);">Efficiency Improvement</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="color: #f53003; font-size: 2.5rem; font-weight: bold;">60%</div>
+                        <div style="color: rgba(255, 255, 255, 0.8);">Faster Approvals</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="color: #f53003; font-size: 2.5rem; font-weight: bold;">100%</div>
+                        <div style="color: rgba(255, 255, 255, 0.8);">Uptime Achieved</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Akash Mahajan. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Back to Portfolio</a>
+                    <a href="mailto:akashmahajan4020@gmail.com" class="footer-link">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Gallery Slider Functionality
+        let currentSlideIndex = 0;
+        const totalSlides = 2;
+
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            if (currentSlideIndex >= totalSlides) currentSlideIndex = 0;
+            if (currentSlideIndex < 0) currentSlideIndex = totalSlides - 1;
+            updateSlider();
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const gallery = document.getElementById('projectGallery');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            gallery.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlideIndex);
+            });
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
