@@ -1,151 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details | Akash Mahajan</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Details | Akash Mahajan</title>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
 
-    <style>
-        .project-detail-hero {
-            background: linear-gradient(135deg, #21201c, #3a3935, #21201c);
-            color: #fff;
-            padding: 120px 0 80px;
-            position: relative
-        }
-
-        .project-detail-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 80%, rgba(245, 48, 3, .1), transparent 50%)
-        }
-
-        .project-detail-content {
-            position: relative;
-            z-index: 2
-        }
-
-        .gallery-item {
-            background: linear-gradient(45deg, #f53003, #ff6b3d);
-            height: 250px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            color: #fff
-        }
-
-        .gallery-item i {
-            font-size: 3rem
-        }
-
-        .feature-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
-            border-left: 4px solid #f53003
-        }
-
-        .back-btn {
-            position: fixed;
-            top: 100px;
-            left: 20px;
-            background: #f53003;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 50%;
-            z-index: 1000
-        }
-    </style>
+<style>
+.project-detail-hero{
+  background:linear-gradient(135deg,#21201c,#3a3935,#21201c);
+  color:#fff;padding:120px 0 80px;position:relative
+}
+.project-detail-hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 80%,rgba(245,48,3,.1),transparent 50%)
+}
+.project-detail-content{position:relative;z-index:2}
+.gallery-item{
+  background:linear-gradient(45deg,#f53003,#ff6b3d);
+  height:250px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;color:#fff
+}
+.gallery-item i{font-size:3rem}
+.feature-card{
+  background:#fff;padding:2rem;border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  border-left:4px solid #f53003
+}
+.back-btn{
+  position:fixed;top:100px;left:20px;
+  background:#f53003;color:#fff;padding:1rem;
+  border-radius:50%;z-index:1000
+}
+</style>
 </head>
 
 <body>
 
-    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
 
-    <!-- HERO -->
-    <section class="project-detail-hero">
-        <div class="container project-detail-content">
-            <h1 id="title"></h1>
-            <p id="subtitle" style="font-size:1.3rem;color:#f53003"></p>
-            <p id="description" style="font-size:1.1rem;line-height:1.7"></p>
+<!-- HERO -->
+<section class="project-detail-hero">
+<div class="container project-detail-content">
+  <h1 id="title"></h1>
+  <p id="subtitle" style="font-size:1.3rem;color:#f53003"></p>
+  <p id="description" style="font-size:1.1rem;line-height:1.7"></p>
 
-            <div id="techTags" style="display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0"></div>
+  <div id="techTags" style="display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0"></div>
 
-            <a id="liveBtn" target="_blank" class="btn btn-primary">
-                <i class="fas fa-external-link-alt"></i> View Live Site
-            </a>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section style="padding:80px 0;background:#f8f9fa">
-        <div class="container">
-            <h2 class="section-title">Project Gallery</h2>
-            <div class="gallery-grid" id="gallery"></div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section style="padding:80px 0">
-        <div class="container">
-            <h2 class="section-title">Key Features</h2>
-            <div class="feature-grid" id="features"></div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>© 2024 Akash Mahajan</p>
-            <a href="index.html">Back to Portfolio</a>
-        </div>
-    </footer>
-
-    <script src="projects-data.js"></script>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const key = params.get("project");
-        const p = PROJECTS[key];
-
-        if (!p) { document.body.innerHTML = "<h2>Project Not Found</h2>"; }
-
-        document.getElementById("title").innerText = p.title;
-        document.getElementById("subtitle").innerText = p.subtitle;
-        document.getElementById("description").innerText = p.description;
-
-        document.getElementById("techTags").innerHTML =
-            p.tech.map(t => `<span style="background:rgba(245,48,3,.2);color:#f53003;padding:.5rem 1rem;border-radius:20px">${t}</span>`).join("");
-
-        if (p.liveUrl) { document.getElementById("liveBtn").href = p.liveUrl; }
-        else { document.getElementById("liveBtn").style.display = "none"; }
-
-        document.getElementById("gallery").innerHTML =
-            p.gallery.map(g => `
-<div class="gallery-item">
-<i class="fas ${g.icon}"></i>
-<div style="position:absolute;bottom:1rem;left:1rem;right:1rem">
-<h4>${g.title}</h4>
-<p style="opacity:.85">${g.text}</p>
+  <a id="liveBtn" target="_blank" class="btn btn-primary">
+    <i class="fas fa-external-link-alt"></i> View Live Site
+  </a>
 </div>
-</div>`).join("");
+</section>
 
-        document.getElementById("features").innerHTML =
-            p.features.map(f => `
-<div class="feature-card">
-<div style="color:#f53003;font-size:2rem;margin-bottom:1rem">
-<i class="fas ${f.icon}"></i>
+<!-- GALLERY -->
+<section style="padding:80px 0;background:#f8f9fa">
+<div class="container">
+<h2 class="section-title">Project Gallery</h2>
+<div class="gallery-grid" id="gallery"></div>
 </div>
-<h3>${f.title}</h3>
-<p>${f.text}</p>
-</div>`).join("");
-    </script>
+</section>
+
+<!-- FEATURES -->
+<section style="padding:80px 0">
+<div class="container">
+<h2 class="section-title">Key Features</h2>
+<div class="feature-grid" id="features"></div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>© 2024 Akash Mahajan</p>
+<a href="index.html">Back to Portfolio</a>
+</div>
+</footer>
+
+<script src="projects-data.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const key = params.get("project");
+  const data = projects[key];
+
+  if (!data) {
+    document.body.innerHTML = "<h2 style='text-align:center'>Project Not Found</h2>";
+  }
+
+  document.getElementById("title").innerText = data.title;
+  document.getElementById("subtitle").innerText = data.subtitle;
+  document.getElementById("description").innerText = data.description;
+
+  // Tech tags
+  document.getElementById("techTags").innerHTML =
+    data.tech.map(t => `
+      <span style="background:rgba(245,48,3,.2);color:#f53003;padding:.5rem 1rem;border-radius:20px">
+        ${t}
+      </span>
+    `).join("");
+
+  // Gallery
+  document.getElementById("gallery").innerHTML =
+    data.galleryIcons.map(icon => `
+      <div class="gallery-item">
+        <i class="fas ${icon}"></i>
+      </div>
+    `).join("");
+
+  // Features
+  document.getElementById("features").innerHTML =
+    data.features.map(text => `
+      <div class="feature-card">
+        <p>${text}</p>
+      </div>
+    `).join("");
+</script>
 
 </body>
-
 </html>
