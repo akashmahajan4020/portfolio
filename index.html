@@ -587,6 +587,7 @@
                         <button type="submit" class="btn btn-primary">
                             Send Message
                         </button>
+                        <span id="loader" class="loader" style="display:none;"></span>
                     </form>
                 </div>
             </div>
@@ -619,6 +620,9 @@
         document.getElementById("contactForm").addEventListener("submit", function (e) {
             e.preventDefault();
 
+            loader.style.display = "inline-block";
+            btnText.textContent = "Sending...";
+            btn.disabled = true;
             const params = {
                 from_name: document.getElementById("name").value,
                 from_email: document.getElementById("email").value,
@@ -630,13 +634,25 @@
                 "template_tshg1uz",    // Email template ID
                 params
             )
-                .then(function () {
-                    alert("✅ Message sent successfully!");
+                .then(() => {
+                    btnText.textContent = "Message Sent ✅";
                     document.getElementById("contactForm").reset();
+
+                    setTimeout(() => {
+                        loader.style.display = "none";
+                        btnText.textContent = "Send Message";
+                        btn.disabled = false;
+                    }, 2000);
                 })
-                .catch(function (error) {
-                    alert("❌ Failed to send message. Try again.");
+                .catch((error) => {
                     console.error(error);
+                    btnText.textContent = "Failed ❌";
+
+                    setTimeout(() => {
+                        loader.style.display = "none";
+                        btnText.textContent = "Send Message";
+                        btn.disabled = false;
+                    }, 2000);
                 });
         });
     </script>
