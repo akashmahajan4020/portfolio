@@ -111,7 +111,7 @@ const projects = {
     galleryImages: [
       "sarawan1.jpeg",
       "sarawan2.jpeg",
-      "sarawan3.jpeg"
+      "sarawan.jpeg"
     ]
   },
 
