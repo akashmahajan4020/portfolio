@@ -101,18 +101,16 @@
             transform: scale(1.2);
         }
         .gallery-item {
-            background: linear-gradient(45deg, #f53003, #ff6b3d);
+            position: relative;
             height: 250px;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
             overflow: hidden;
         }
-        .gallery-item i {
-            font-size: 3rem;
-            color: #ffffff;
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .feature-grid {
             display: grid;
@@ -192,14 +190,14 @@
                     <div class="gallery-slide">
                         <div class="gallery-grid">
                             <div class="gallery-item">
-                                <i class="fas fa-home"></i>
+                                <img src="okas.png" alt="Property Listings">
                                 <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
                                     <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Property Listings</h4>
                                     <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Comprehensive property catalog</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
-                                <i class="fas fa-search"></i>
+                                <img src="okas2.png" alt="Customer Management">
                                 <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
                                     <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Advanced Search</h4>
                                     <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Smart filtering system</p>
@@ -210,14 +208,14 @@
                     <div class="gallery-slide">
                         <div class="gallery-grid">
                             <div class="gallery-item">
-                                <i class="fas fa-users"></i>
+                                <img src="okas3.png" alt="Customer CRM">
                                 <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
                                     <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Customer CRM</h4>
                                     <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Lead management system</p>
                                 </div>
                             </div>
                             <div class="gallery-item">
-                                <i class="fas fa-mobile-alt"></i>
+                                <img src="okas.png" alt="Mobile Responsive">
                                 <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
                                     <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Mobile Responsive</h4>
                                     <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Perfect on all devices</p>

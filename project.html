@@ -39,6 +39,12 @@
   display:flex;align-items:center;justify-content:center;
   position:relative;color:#fff
 }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 .gallery-item i{font-size:3rem}
 </style>
 </head>
@@ -86,12 +92,17 @@ document.getElementById("description").innerText=data.description;
 document.getElementById("techTags").innerHTML =
   data.tech.map(t=>`<span style="background:rgba(245,48,3,.2);color:#f53003;padding:.5rem 1rem;border-radius:20px">${t}</span>`).join("");
 
-document.getElementById("projectGallery").innerHTML=`
-<div class="gallery-slide">
-  <div class="gallery-grid">
-    ${data.galleryIcons.map(i=>`<div class="gallery-item"><i class="fas ${i}"></i></div>`).join("")}
+document.getElementById("projectGallery").innerHTML = `
+  <div class="gallery-slide">
+    <div class="gallery-grid">
+      ${data.galleryImages.map(img => `
+        <div class="gallery-item">
+          <img src="${img}" alt="${data.title}" loading="lazy">
+        </div>
+      `).join("")}
+    </div>
   </div>
-</div>`;
+`;
 
 document.getElementById("features").innerHTML =
   data.features.map(f=>`

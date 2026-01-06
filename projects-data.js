@@ -15,7 +15,12 @@ const projects = {
       { icon: "fa-database", title: "Optimized Database", text: "Fast MySQL queries with indexing." }
     ],
 
-    galleryIcons: ["fa-cut", "fa-users", "fa-truck"]
+    galleryIcons: ["fa-cut", "fa-users", "fa-truck"],
+    galleryImages: [
+      "taillor1.png",
+      "tailor2.png",
+      "tailor3.png"
+    ]
   },
 
   indiamea: {
@@ -33,7 +38,12 @@ const projects = {
       { icon: "fa-lock", title: "Secure Handling", text: "Safe document storage and access." }
     ],
 
-    galleryIcons: ["fa-file-alt", "fa-search", "fa-shipping-fast"]
+    galleryIcons: ["fa-file-alt", "fa-search", "fa-shipping-fast"],
+    galleryImages: [
+      "indiamea.png",
+      "indiamea1.png",
+      "indiamea2.png"
+    ]
   },
 
   flowkar: {
@@ -51,7 +61,12 @@ const projects = {
       { icon: "fa-chart-line", title: "SEO Optimized", text: "SEO friendly architecture." }
     ],
 
-    galleryIcons: ["fa-calendar", "fa-share-alt", "fa-chart-line"]
+    galleryIcons: ["fa-calendar", "fa-share-alt", "fa-chart-line"],
+    galleryImages: [
+      "flowkar.png",
+      "flowkar2.png",
+      "flowkar3png.png"
+    ]
   },
 
   reservemytable: {
@@ -69,7 +84,12 @@ const projects = {
       { icon: "fa-database", title: "Optimized Backend", text: "High performance queries." }
     ],
 
-    galleryIcons: ["fa-utensils", "fa-chair", "fa-clock"]
+    galleryIcons: ["fa-utensils", "fa-chair", "fa-clock"],
+    galleryImages: [
+      "reservemytable1.png",
+      "reservemy3.png",
+      "reseerve2.png"
+    ]
   },
 
   sarawanspices: {
@@ -87,7 +107,12 @@ const projects = {
       { icon: "fa-user-cog", title: "Admin Panel", text: "Complete admin control." }
     ],
 
-    galleryIcons: ["fa-shopping-cart", "fa-box", "fa-credit-card"]
+    galleryIcons: ["fa-shopping-cart", "fa-box", "fa-credit-card"],
+    galleryImages: [
+      "sarawan1.jpeg",
+      "sarawan2.jpeg",
+      "sarawan3.jpeg"
+    ]
   },
 
   shakebug: {
@@ -105,6 +130,11 @@ const projects = {
       { icon: "fa-envelope", title: "Email Alerts", text: "Automatic notifications." }
     ],
 
-    galleryIcons: ["fa-bug", "fa-tasks", "fa-users"]
+    galleryIcons: ["fa-bug", "fa-tasks", "fa-users"],
+    galleryImages: [
+      "shakebug.png",
+      "shakebug2.png",
+      "shakebug3.png"
+    ]
   }
 };
